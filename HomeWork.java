@@ -7,23 +7,23 @@ import java.util.logging.*;
 public class HomeWork {
     //public 
     public static void main(String[] args) throws ParseException, IOException{
-        // 1. Пусть дан LinkedList с несколькими элементами. Реализуйте метод, который вернёет «перевёрнутый» список.
+        // 1. РџСѓСЃС‚СЊ РґР°РЅ LinkedList СЃ РЅРµСЃРєРѕР»СЊРєРёРјРё СЌР»РµРјРµРЅС‚Р°РјРё. Р РµР°Р»РёР·СѓР№С‚Рµ РјРµС‚РѕРґ, РєРѕС‚РѕСЂС‹Р№ РІРµСЂРЅС‘РµС‚ В«РїРµСЂРµРІС‘СЂРЅСѓС‚С‹Р№В» СЃРїРёСЃРѕРє.
         List<Integer> list = new LinkedList<Integer>();
         Random rand = new Random();
         for (int i = 0; i < 20; i++) {
             list.add(rand.nextInt(15));
         }
-        System.out.println("Первоначальный список:");
+        System.out.println("РџРµСЂРІРѕРЅР°С‡Р°Р»СЊРЅС‹Р№ СЃРїРёСЃРѕРє:");
         System.out.println(list.toString());
-        System.out.println("Перевернутый список");
+        System.out.println("РџРµСЂРµРІРµСЂРЅСѓС‚С‹Р№ СЃРїРёСЃРѕРє");
         ReversePrint(list);
         System.out.println(list.toString());
-        /* 2. Реализуйте очередь с помощью LinkedList со следующими методами:
-        • enqueue() — помещает элемент в конец очереди,
-        • dequeue() — возвращает первый элемент из очереди и удаляет его,
-        • first() — возвращает первый элемент из очереди, не удаляя. */
+        /* 2. Р РµР°Р»РёР·СѓР№С‚Рµ РѕС‡РµСЂРµРґСЊ СЃ РїРѕРјРѕС‰СЊСЋ LinkedList СЃРѕ СЃР»РµРґСѓСЋС‰РёРјРё РјРµС‚РѕРґР°РјРё:
+        вЂў enqueue() вЂ” РїРѕРјРµС‰Р°РµС‚ СЌР»РµРјРµРЅС‚ РІ РєРѕРЅРµС† РѕС‡РµСЂРµРґРё,
+        вЂў dequeue() вЂ” РІРѕР·РІСЂР°С‰Р°РµС‚ РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РёР· РѕС‡РµСЂРµРґРё Рё СѓРґР°Р»СЏРµС‚ РµРіРѕ,
+        вЂў first() вЂ” РІРѕР·РІСЂР°С‰Р°РµС‚ РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РёР· РѕС‡РµСЂРµРґРё, РЅРµ СѓРґР°Р»СЏСЏ. */
         MyQueue(list);
-        // 3. В калькулятор добавьте возможность отменить последнюю операцию.
+        // 3. Р’ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂ РґРѕР±Р°РІСЊС‚Рµ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РѕС‚РјРµРЅРёС‚СЊ РїРѕСЃР»РµРґРЅСЋСЋ РѕРїРµСЂР°С†РёСЋ.
         Calculator();
         
     }
@@ -34,22 +34,22 @@ public class HomeWork {
     }
 
     public static void MyQueue(List<Integer> list) {
-        enqueue(list); // помещает элемент в конец очереди,
+        enqueue(list); // РїРѕРјРµС‰Р°РµС‚ СЌР»РµРјРµРЅС‚ РІ РєРѕРЅРµС† РѕС‡РµСЂРµРґРё,
         System.out.println(list.toString());
 
-        int num = dequeue(list); //возвращает первый элемент из очереди и удаляет его,
-        System.out.printf("%d - первый элемент очереди, удален из списка", num);
+        int num = dequeue(list); //РІРѕР·РІСЂР°С‰Р°РµС‚ РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РёР· РѕС‡РµСЂРµРґРё Рё СѓРґР°Р»СЏРµС‚ РµРіРѕ,
+        System.out.printf("%d - РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РѕС‡РµСЂРµРґРё, СѓРґР°Р»РµРЅ РёР· СЃРїРёСЃРєР°", num);
         System.out.println();
         System.out.println(list.toString());
 
-        int num2 = first(list); //возвращает первый элемент из очереди, не удаляя.
-        System.out.printf("%d - первый элемент очереди, не удален из списка", num2);
+        int num2 = first(list); //РІРѕР·РІСЂР°С‰Р°РµС‚ РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РёР· РѕС‡РµСЂРµРґРё, РЅРµ СѓРґР°Р»СЏСЏ.
+        System.out.printf("%d - РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РѕС‡РµСЂРµРґРё, РЅРµ СѓРґР°Р»РµРЅ РёР· СЃРїРёСЃРєР°", num2);
         System.out.println();
         System.out.println(list.toString());
     }
     public static List<Integer> enqueue(List<Integer> list) {
         Scanner iScanner = new Scanner(System.in);
-        System.out.println("Введите число,которое необходимо поместить в конец списка: ");
+        System.out.println("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ,РєРѕС‚РѕСЂРѕРµ РЅРµРѕР±С…РѕРґРёРјРѕ РїРѕРјРµСЃС‚РёС‚СЊ РІ РєРѕРЅРµС† СЃРїРёСЃРєР°: ");
         int number = iScanner.nextInt();
         list.add(number);
         return list;
@@ -81,27 +81,27 @@ public class HomeWork {
         String operation = "";
         while (!isCont.equals("no")) {
             if (stack.isEmpty()){
-                System.out.print("Введите 1-ое число: ");
+                System.out.print("Р’РІРµРґРёС‚Рµ 1-РѕРµ С‡РёСЃР»Рѕ: ");
                 String str1 = iScanner.nextLine();
                 number1 = Double.parseDouble(str1);
-                System.out.print("Введите 2-ое число: ");
+                System.out.print("Р’РІРµРґРёС‚Рµ 2-РѕРµ С‡РёСЃР»Рѕ: ");
                 String str2 = iScanner.nextLine();
                 number2 = Double.parseDouble(str2);
-                System.out.print("Введите операцию (+, -, *, /): ");
+                System.out.print("Р’РІРµРґРёС‚Рµ РѕРїРµСЂР°С†РёСЋ (+, -, *, /): ");
                 operation = iScanner.nextLine(); 
             }
             else{  
                 if (stack.size() == 1) {
-                    System.out.print("Введите операцию (+, -, *, /): ");
+                    System.out.print("Р’РІРµРґРёС‚Рµ РѕРїРµСЂР°С†РёСЋ (+, -, *, /): ");
                     operation = iScanner.nextLine(); 
                 }
                 else {
-                    System.out.print("Введите операцию (+, -, *, /): ");
-                    System.out.println("Для отмены предыдущей операции, введите return: ");   
+                    System.out.print("Р’РІРµРґРёС‚Рµ РѕРїРµСЂР°С†РёСЋ (+, -, *, /): ");
+                    System.out.println("Р”Р»СЏ РѕС‚РјРµРЅС‹ РїСЂРµРґС‹РґСѓС‰РµР№ РѕРїРµСЂР°С†РёРё, РІРІРµРґРёС‚Рµ return: ");   
                     operation = iScanner.nextLine(); 
                 } 
                 if (!operation.equals("return"))  {    
-                    System.out.print("Введите число: ");
+                    System.out.print("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: ");
                     String str2 = iScanner.nextLine();
                     number2 = Double.parseDouble(str2);
                 }
@@ -133,21 +133,21 @@ public class HomeWork {
             else if (operation.equals("return")){
                 double num = stack.pop();
                 number1 = stack.peek();
-                String expr = String.format("%f - результат последней операции", num);
+                String expr = String.format("%f - СЂРµР·СѓР»СЊС‚Р°С‚ РїРѕСЃР»РµРґРЅРµР№ РѕРїРµСЂР°С†РёРё", num);
                 System.out.print(expr);  
                 logger.log(Level.INFO, expr);
                 System.out.println();
-                String expr1 = String.format("%f - результат предыдущей операции", number1);
+                String expr1 = String.format("%f - СЂРµР·СѓР»СЊС‚Р°С‚ РїСЂРµРґС‹РґСѓС‰РµР№ РѕРїРµСЂР°С†РёРё", number1);
                 System.out.print(expr1);  
                 logger.log(Level.INFO, expr1);
             }
             else {
-                System.out.println("Неправильно введена операция");
+                System.out.println("РќРµРїСЂР°РІРёР»СЊРЅРѕ РІРІРµРґРµРЅР° РѕРїРµСЂР°С†РёСЏ");
                 logger.log(Level.INFO, "Operation is not supported");
             }
             System.out.println();
     
-            System.out.print("Вы хотите выполнить еще одну операцию (yes/no): ");
+            System.out.print("Р’С‹ С…РѕС‚РёС‚Рµ РІС‹РїРѕР»РЅРёС‚СЊ РµС‰Рµ РѕРґРЅСѓ РѕРїРµСЂР°С†РёСЋ (yes/no): ");
             
             isCont = iScanner.nextLine();
             if  (!operation.equals("return")){
