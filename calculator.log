@@ -1,0 +1,12 @@
+апр. 26, 2023 2:22:30 PM HomeWork Calculator
+INFO: Logging start
+апр. 26, 2023 2:22:40 PM HomeWork Calculator
+INFO: 12,000000 + 13,000000 = 25,000000
+апр. 26, 2023 2:22:49 PM HomeWork Calculator
+INFO: 25,000000 / 14,000000 = 1,785714
+апр. 26, 2023 2:22:58 PM HomeWork Calculator
+INFO: 1,785714 - результат последней операции
+апр. 26, 2023 2:22:58 PM HomeWork Calculator
+INFO: 25,000000 - результат предыдущей операции
+апр. 26, 2023 2:23:09 PM HomeWork Calculator
+INFO: 25,000000 + 5,000000 = 30,000000
